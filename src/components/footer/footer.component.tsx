@@ -12,7 +12,7 @@ export const Footer = () => (
 		</Link>
 		<span>from barcelona</span>
 		<Link
-			href="https://twitter.com/home"
+			href="https://github.com/dimaslz/preact-ts-ssr"
 			target="_blank"
 			rel="noopener noreferrer"
 		>
