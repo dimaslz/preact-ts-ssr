@@ -23,10 +23,10 @@ export const render = async (pageContext: any) => {
 	const section = documentProps?.section || "home";
 	const title =
 		(documentProps && documentProps.title) ||
-		`RandomData by Loremapi.io Studio project | ${section} - by dimaslz.com`;
+		`Preact custom SSR App | ${section} - by dimaslz.com`;
 	const desc =
 		(documentProps && documentProps.description) ||
-		"RandomData - generate API response data with your custom schema - by dimaslz.com";
+		"Preact custom SSR App - by dimaslz.com";
 
 	const documentHtml = escapeInject`<!DOCTYPE html>
     <html lang="en">
