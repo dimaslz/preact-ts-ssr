@@ -100,7 +100,7 @@
       needs: "create-and-push-docker-image"
       environment: 
         name: "production"
-        url: "preact-ts-ssr.dimaslz.dev"
+        url: "https://preact-ts-ssr.dimaslz.dev"
       steps: 
         - 
           name: "Cache"
