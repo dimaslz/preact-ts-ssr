@@ -41,12 +41,5 @@
     "**/*.test.tsx",
     "**/*.test.ts", "server",
   ],
-  "references": [{ "path": "./tsconfig.node.json" }],
-  "ts-node": {
-    "transpileOnly": true,
-    "esm": true,
-    "compilerOptions": {
-      "moduleResolution": "Node16"
-    }
-  }
+  "references": [{ "path": "./tsconfig.node.json" }]
 }
