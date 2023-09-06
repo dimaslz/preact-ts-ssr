@@ -12,22 +12,26 @@ type Props = {
 	activeClassName?: string;
 };
 
-export const Link = (props: Props) => {
+export const Link = ({ withBackground, activeClassName, ...rest }: Props) => {
 	const pageContext: any = usePageContext();
 
-	const isActive = pageContext?.urlPathname === props.href;
+	const isActive = pageContext?.urlPathname === rest.href;
+
+	if (rest.href.startsWith("./")) {
+		rest.href = `${pageContext?.urlPathname}${rest.href.replace("./", "/")}`;
+	}
 
 	const className = [
-		props.className,
-		props.withBackground
+		rest.className,
+		withBackground
 			? isActive
 				? "text-white bg-gray-900 dark:bg-gray-700"
 				: "hover:bg-gray-900 dark:hover:bg-gray-700"
 			: "text-blue-500 hover:text-blue-700 hover:underline",
-		isActive && (props.activeClassName || "is-active"),
+		isActive && (activeClassName || "is-active"),
 	]
 		.filter(Boolean)
 		.join(" ");
 
-	return <a {...props} className={className} />;
+	return <a {...rest} className={className} />;
 };
