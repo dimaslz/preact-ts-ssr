@@ -12,6 +12,6 @@ describe("Header", () => {
 	test("has three items", () => {
 		const component = render(<Header />);
 
-		expect(component.getAllByRole("link")).toHaveLength(2);
+		expect(component.getAllByRole("link")).toHaveLength(3);
 	});
 });

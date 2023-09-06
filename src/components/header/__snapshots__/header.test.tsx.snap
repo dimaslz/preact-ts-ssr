@@ -19,16 +19,20 @@ exports[`Header > snapshot 1`] = `
           <a
             class="flex h-full items-center justify-center px-4 py-0 hover:bg-gray-900 dark:hover:bg-gray-700"
             href="/"
-            withbackground="true"
           >
             Home
           </a>
           <a
             class="flex h-full items-center justify-center px-4 py-0 hover:bg-gray-900 dark:hover:bg-gray-700"
             href="/other"
-            withbackground="true"
           >
             Other
+          </a>
+          <a
+            class="flex h-full items-center justify-center px-4 py-0 hover:bg-gray-900 dark:hover:bg-gray-700"
+            href="/projects"
+          >
+            Projects
           </a>
         </nav>
       </header>
@@ -49,16 +53,20 @@ exports[`Header > snapshot 1`] = `
         <a
           class="flex h-full items-center justify-center px-4 py-0 hover:bg-gray-900 dark:hover:bg-gray-700"
           href="/"
-          withbackground="true"
         >
           Home
         </a>
         <a
           class="flex h-full items-center justify-center px-4 py-0 hover:bg-gray-900 dark:hover:bg-gray-700"
           href="/other"
-          withbackground="true"
         >
           Other
+        </a>
+        <a
+          class="flex h-full items-center justify-center px-4 py-0 hover:bg-gray-900 dark:hover:bg-gray-700"
+          href="/projects"
+        >
+          Projects
         </a>
       </nav>
     </header>

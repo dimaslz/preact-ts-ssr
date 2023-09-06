@@ -20,6 +20,13 @@ export const Header = () => (
 			>
 				Other
 			</Link>
+			<Link
+				withBackground
+				href="/projects"
+				className="flex h-full items-center justify-center px-4 py-0"
+			>
+				Projects
+			</Link>
 		</nav>
 	</header>
 );
