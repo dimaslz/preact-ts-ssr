@@ -131,11 +131,11 @@
           if: "${{ failure() }}"
           run: "echo \"container is not running\" && exit 1"
         - 
-          name: "create certificates"
-          run: "ssh prod \"mkdir /usr/share/nginx/html/preact-ts-ssr.dimaslz.dev && echo \\\"1\\\" | certbot certonly --webroot -w /usr/share/nginx/html/preact-ts-ssr.dimaslz.dev -d preact-ts-ssr.dimaslz.dev --email ${{ secrets.FITO_ENV_USER_EMAIL }} --agree-tos --no-eff-email\""
-        - 
           name: "setup nginx config"
           run: "wget https://statics.dimaslz.dev/fito/nginx/static-config.nginx-certbot.tmpl -O nginx.tmpl\n\texport SERVER_NAME=\"preact-ts-ssr.dimaslz.dev\"\n\texport SERVER_URL=\"http://${{ env.newContainerIP }}:${{ env.newContainerPort }}\"\n\tenvsubst < nginx.tmpl > preact-ts-ssr.dimaslz.dev\n\tscp preact-ts-ssr.dimaslz.dev prod:/etc/nginx/sites-enabled/preact-ts-ssr.dimaslz.dev\n\tssh prod \"nginx -t && systemctl restart nginx\""
+        - 
+          name: "create certificates"
+          run: "ssh prod \"mkdir /usr/share/nginx/html/preact-ts-ssr.dimaslz.dev && echo \\\"1\\\" | certbot certonly --webroot -w /usr/share/nginx/html/preact-ts-ssr.dimaslz.dev -d preact-ts-ssr.dimaslz.dev --email ${{ secrets.FITO_ENV_USER_EMAIL }} --agree-tos --no-eff-email && nginx -t && systemctl restart nginx\""
         - 
           name: "Container is not running"
           if: "${{ failure() }}"
